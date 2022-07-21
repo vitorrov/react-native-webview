@@ -692,7 +692,7 @@ RCTAutoInsetsProtocol>
   NSString *headerCookie = [RCTConvert NSString:_source[@"headers"][@"cookie"]];
   if(headerCookie) {
     NSDictionary *headers = [NSDictionary dictionaryWithObjectsAndKeys:headerCookie,@"Set-Cookie",nil];
-    NSURL *urlString = [NSURL URLWithString:_source[@"headers"]];
+    NSURL *urlString = [NSURL URLWithString:_source[@"uri"]];
     NSArray *httpCookies = [NSHTTPCookie cookiesWithResponseHeaderFields:headers forURL:urlString];
     [self writeCookiesToWebView:httpCookies completion:nil];
   }
