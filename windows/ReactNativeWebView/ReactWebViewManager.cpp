@@ -65,6 +65,7 @@ namespace winrt::ReactNativeWebView::implementation {
                 auto const& srcMap = propertyValue.AsObject();
                 if (srcMap.find("uri") != srcMap.end()) {
                     auto uriString = srcMap.at("uri").AsString();
+                    auto headersObject = srcMap.at("headers").AsObject();
                     if (uriString.length() == 0) {
                         continue;
                     }
